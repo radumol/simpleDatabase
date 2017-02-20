@@ -1,3 +1,5 @@
+Author: Radu Molea
+
 
 To set-up and run the app:
 
