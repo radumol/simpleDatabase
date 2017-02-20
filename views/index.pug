@@ -1,0 +1,44 @@
+
+
+
+head
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+	script(src="/recipePage.js")
+	title COMP2406 RECIPES
+	link(rel="stylesheet" href="style.css")
+	
+body
+	if user && user.auth
+		h2 Welcome #{user.username}
+		h3 Your recipes:
+		select(id="recipeSelect")
+		button(id="recipeViewButton") View
+		
+		hr
+		label(for="recipeName") Recipe name: 
+		br
+		textarea(id="recipeName" style="length:200px")
+		br
+		label(for="recipeDuration") Duration: 
+		br
+		textarea(id="recipeDuration" style="length:200px")
+		br
+		label(for="recipeIngredients") Ingredients: 
+		br
+		textarea(id="recipeIngredients" style="length:500px")
+		br
+		label(for="recipeDirections") Directions: 
+		br
+		textarea(id="recipeDirections" style="length:500px")
+		br
+		label(for="recipeNotes") Notes: 
+		br
+		textarea(id="recipeNotes" style="length:500px")
+		br
+		button(id="recipeSubmitButton") Update
+		
+		
+	else
+		h2(style={color:'darkred'}) Not logged in.
+		p please visit the #[a(href='/login') login page] to get started.
+		p or visit the #[a(href='/register') registration page] to create a new account.
